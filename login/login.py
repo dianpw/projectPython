@@ -6,17 +6,17 @@ app.config['SECRET_KEY'] = 'supersecretkey'  # Tambahkan SECRET_KEY
 
 @app.route("/success/<name>")
 def success(name):
-    
-    return "Welcome {}".format(name)
+    return render_template("read.html", name=name)
+    #return "Welcome {}".format(name)
 
 @app.route("/login", methods=["POST", "GET"])
 def login():
     if request.method == "POST":
         user = request.form["username"]
-        flash('File uploaded successfully!', 'success')
+        flash('Login Berhasil!', 'success')
         return redirect(url_for("success", name=user))
     else:
-        flash('No file selected!', 'error')
+        flash('Login Gagal', 'error')
         return render_template("login.html")
     
 if __name__ == "__main__":
