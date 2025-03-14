@@ -7,23 +7,24 @@
     <title>{% block title %}{% endblock%}</title>
 </head>
 <body>
-    <h2>My Web</h2>
-    <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/respon">Respon</a>
-        </li>
-      </ul>
-    <a href="/">Home</a> | <a href="/about">About</a> | <a href="/respon">Respon</a>
-    {% block content %}
-    {% endblock %}
-
-    
+  <div class="container py-3">
+    <header>
+      <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center link-body-emphasis text-decoration-none">   <span class="fs-4">My Web</span></a>
+  
+        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+          <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/">Home</a>
+          <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/about">About</a>
+          <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/respon">Respon</a>
+        </nav>
+      </div>
+  
+      <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal text-body-emphasis">{% block content %} {% endblock %}</h1>
+        <p class="fs-5 text-body-secondary">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
+      </div>
+    </header>
+  </div>
     <script src="../static/js.js"></script>
     <script src="../static/bootstrap.js"></script>
     <script src="../static/bootstrap.bundle.js"></script>
